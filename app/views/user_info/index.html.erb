@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>All User Info</title>
+</head>
+<body>
+  <h1>All User Info</h1>
+  <ul>
+    <% @user_info.each do |user_info| %>
+      <li><%= user_info.first_name %> <%= user_info.last_name %> - <%= user_info.telephone_number %></li>
+    <% end %>
+  </ul>
+</body>
+</html>

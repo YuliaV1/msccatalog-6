@@ -1,0 +1,27 @@
+<!-- app/views/users/new.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a new user</title>
+  <!-- Вставте ваші стилі CSS тут -->
+</head>
+<body>
+  <h1>Create a new user</h1>
+  <%= form_with model: @user, data: { controller: 'user-form' } do |form| %>
+    <div>
+      <%= form.label :email %>
+      <%= form.text_field :email, data: { target: 'user-form.email' } %>
+      <div data-target="user-form.emailError" class="error"></div>
+    </div>
+
+    <div>
+      <%= form.label :password %>
+      <%= form.password_field :password %>
+    </div>
+
+    <%= form.submit "Create User" %>
+  <% end %>
+
+  <!-- Підключіть ваші скрипти JavaScript тут -->
+</body>
+</html>

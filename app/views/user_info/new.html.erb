@@ -1,0 +1,33 @@
+<!-- app/views/user_info/new.html.erb -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create a new user info</title>
+</head>
+<body>
+  <h1>Create a new user info</h1>
+ <%= form_for @user_info, url: user_info_index_path do |form| %>
+    <div>
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+
+    <div>
+      <%= form.label :last_name %>
+      <%= form.text_field :last_name %>
+    </div>
+
+    <div>
+      <%= form.label :telephone_number %>
+      <%= form.text_field :telephone_number %>
+    </div>
+
+    <div>
+      <%= form.label :user_id %>
+      <%= form.collection_select :user_id, User.all, :id, :email %>
+    </div>
+
+    <%= form.submit "Create User Info" %>
+  <% end %>
+</body>
+</html>
