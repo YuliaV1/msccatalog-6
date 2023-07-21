@@ -23,6 +23,11 @@ class SongsController < ApplicationController
   private
 
   def song_params
+
     params.require(:song).permit(:name, :artist, :duration)
+    class CatalogController < ApplicationController
+      def index
+        # Логіка для сторінки "Каталог"
+      end
   end
 end

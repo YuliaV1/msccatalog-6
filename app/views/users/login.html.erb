@@ -1,0 +1,18 @@
+<!-- app/views/users/login.html.erb -->
+
+<%= form_tag(login_path, method: :post) do %>
+  <div class="registration-cssave">
+    <h3 class="text-center">Вхід</h3>
+    <div class="form-group">
+      <%= label_tag :email, 'Email' %>
+      <%= text_field_tag :email, nil, class: 'form-control item', required: true, placeholder: 'Email' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag :password, 'Пароль' %>
+      <%= password_field_tag :password, nil, class: 'form-control item', required: true, placeholder: 'Пароль' %>
+    </div>
+    <div class="form-group">
+      <%= submit_tag 'Увійти', class: 'btn btn-primary btn-block create-account' %>
+    </div>
+  </div>
+<% end %>

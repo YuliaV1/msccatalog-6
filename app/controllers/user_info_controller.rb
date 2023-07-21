@@ -6,14 +6,19 @@ class UserInfoController < ApplicationController
   end
 
   def create
-    @user_info = UserInfo.create(user_info_params)
+    @user_info = UserInfo.new(user_info_params)
     if @user_info.save
-      redirect_to @user_info, notice: 'User info was successfully created.'
+      redirect_to user_info_index_path, notice: 'User info was successfully created.'
     else
       puts @user_info.errors.full_messages # Виведе повідомлення про помилки валідації у консолі
-    render :new
+      render :new
     end
   end
+
+  def index
+    @user_info = UserInfo.all
+  end
+
   private
 
   def user_info_params

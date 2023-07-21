@@ -25,5 +25,10 @@ class UserPlaylistController < ApplicationController
 
   def user_playlist_params
     params.require(:user_playlist).permit(:user_id, :playlist_id)
+    class PlaylistsController < ApplicationController
+      def index
+        # Логіка для сторінки "Плейлисти"
+      end
   end
+
 end
